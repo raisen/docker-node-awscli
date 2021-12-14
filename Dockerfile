@@ -2,7 +2,7 @@ FROM node:14-alpine
  
 RUN apk add --no-cache zip git curl wget gnupg bash libstdc++ binutils python3 make cmake gcc libc-dev libffi-dev openssl-dev
 RUN ln -sf python3 /usr/bin/python
-
+RUN python3 -m ensurepip
 RUN pip3 install --no-cache --upgrade pip setuptools
 
 ENV AWSCLI_VERSION=2.2.1
