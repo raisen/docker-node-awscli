@@ -1,6 +1,6 @@
 FROM ubuntu:latest
 RUN apt update
-RUN apt install -y curl
+RUN apt install -y curl unzip
 RUN curl -fsSL https://deb.nodesource.com/setup_14.x | bash -
 RUN apt-get install -y nodejs
 
