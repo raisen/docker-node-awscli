@@ -2,6 +2,8 @@ FROM node:14-alpine
  
 RUN apk add --no-cache zip git curl wget gnupg
 
+ENV GLIBC_VER=2.31-r0
+
 # aws
 # install glibc compatibility for alpine
 RUN apk --no-cache add \
