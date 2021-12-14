@@ -1,6 +1,6 @@
 FROM node:14-alpine
  
-RUN apk add --no-cache zip git curl wget gnupg bash
+RUN apk add --no-cache zip git curl wget gnupg bash libc6-compat libstdc++
 
 ENV GLIBC_VER=2.31-r0
 
