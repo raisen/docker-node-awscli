@@ -28,11 +28,7 @@ RUN apk --no-cache add \
         /usr/local/aws-cli/v2/current/dist/awscli/data/ac.index \
         /usr/local/aws-cli/v2/current/dist/awscli/examples \
         glibc-*.apk \
-    && find /usr/local/aws-cli/v2/current/dist/awscli/botocore/data -name examples-1.json -delete \
-    && apk --no-cache del \
-        binutils \
-        curl \
-    && rm -rf /var/cache/apk/*
+    && find /usr/local/aws-cli/v2/current/dist/awscli/botocore/data -name examples-1.json -delete 
     
 # jq
 ENV JQ_VERSION='1.6'
@@ -46,5 +42,14 @@ RUN wget --no-check-certificate https://raw.githubusercontent.com/stedolan/jq/ma
     rm -f /tmp/jq-release.key && \
     rm -f /tmp/jq-linux64.asc && \
     rm -f /tmp/jq-linux64
+    
+RUN apk --no-cache del \
+        binutils \
+        curl \
+        zip \
+        curl \
+        wget \
+        gnupg \
+    && rm -rf /var/cache/apk/*
 
 CMD ["node"]
