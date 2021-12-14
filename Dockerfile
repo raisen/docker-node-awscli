@@ -1,7 +1,6 @@
-FROM node:14-buster
+FROM node:14-alpine
  
-# zip
-RUN apt-get update && apt-get install -y zip && rm -rf /var/lib/apt/lists/*
+RUN apk add --no-cache zip git curl wget gpg
 
 # aws
 RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && unzip awscliv2.zip
