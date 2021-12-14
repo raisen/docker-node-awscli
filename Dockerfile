@@ -1,6 +1,8 @@
 FROM ubuntu:latest
+RUN add-apt-repository ppa:git-core/ppa
 RUN apt update
 RUN apt install -y curl unzip git
+
 RUN curl -fsSL https://deb.nodesource.com/setup_14.x | bash -
 RUN apt-get install -y nodejs
 
